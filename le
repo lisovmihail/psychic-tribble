@@ -1,0 +1,14 @@
+        return newCollage
+    }
+    
+    private mutating func changeSticker(_ action: StickerModification,
+                                        id: String,
+                                        in collage: Collage) -> Collage {
+        
+        guard let stickerIndex = collage.stickers.firstIndex(where: {
+            $0.id == id
+        }) else {
+            return collage
+        }
+        
+        var newCollage = collage
